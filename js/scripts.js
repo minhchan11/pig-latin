@@ -10,20 +10,22 @@ var letter = [];
 var j = 0;
 
 function verify() {
-  for (var j = 0; j <= newwords.length+3; j++) {
-    console.log(newwords.length);
+  for (var j = 0; j <= newwords.length; j++) {
     newwords.map(function(newword) {
       letter.push(newword[j].split(""));
+    console.log(letter);
     });
     for (var index = 0; index < vowels.length; index++) {
-          console.log(letter[j]);
           if ((letter[j][0]) === vowels[index]) {
-            console.log("first vowel");
+
+
           } else {
               if ((letter[j][j] === "q") && (letter[j][j+1] === vowels[4])) {
-                console.log(" q u");
+
+
               } else if (letter[j][1] !== vowels[index]) {
-                console.log("hooray");
+
+
               }
             }
 
@@ -40,9 +42,10 @@ $(document).ready(function() {
   $(".form-group").submit(function(event) {
     event.preventDefault();
     sentence = $("#usertext").val();
-    eachword= sentence.split(" ");
+    eachword = sentence.split(" ");
     newwords.push(eachword);
-    console.log(newwords)
+    console.log(newwords);
+    console.log(newwords.length);
     verify(letter);
   });
 });
