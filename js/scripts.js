@@ -30,7 +30,6 @@ function verify() {
     } else { result2 = (eachword[j].replace(stringChar1,"")).concat(stringChar1+"ay"); //single consonants
   }
   output.push(result2);
-  Output = output.join(" ");
 }
 }
 }
@@ -42,6 +41,7 @@ $(document).ready(function() {
     sentence = $("#usertext").val();
     verify();
     $(".piglatin").show();
-    $("#result").text(Output);
+    Output = output.join(" ");
+    $("#result").append(Output);
   });
 });
