@@ -41,5 +41,7 @@ $(document).ready(function() {
     event.preventDefault();
     sentence = $("#usertext").val();
     verify();
+    $(".piglatin").show();
+    $("#result").text(Output);
   });
 });
