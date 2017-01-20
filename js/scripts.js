@@ -4,50 +4,33 @@ var stringChar2 = 0;
 var vowels = ["a","e","i","o","u","A","I","E","O","U"];
 var sentence = 0;
 var eachword = 0;
-var result1 = 0;
-var result2 = 0;
-var result3 = 0;
 
 function verify() {
     eachword= sentence.split(" ");
     for (var j = 0; j < eachword.length; j++) {
     stringChar1 = eachword[j].charAt(0);
     stringChar2 = eachword[j].charAt(1);
-      for (var i = 0; i < vowels.length; i++) {
-        if (stringChar1 === vowels[i] || (stringChar1 === vowels[i]) && (stringChar2 === vowels[i]) ) {
+        if (vowels.indexOf(stringChar1) >-1 ) {
           result1 = eachword[j].concat("ay");
           console.log(result1);
-        } else if (stringChar1 != vowels[i] ) {
-          result2 = (eachword[j].replace(stringChar1,"")).concat(stringChar1+"ay");
-          console.log(result2);
-        } else if ((stringChar1 != vowels[i]) && (stringChar2 != vowels[i])) {
-          result3 = (eachword[j].slice(0,2)).concat(stringChar1+stringChar2+"ay")
-          console.log(result);
-        }
-        { break;}
-  }
-}
+        } else {
+          //   if ((vowels.indexOf(stringChar1) === -1) && (vowels.indexOf(stringChar2) === -1 )) {
+          //   result3 = (eachword[j].slice(0,2)).concat(stringChar1+stringChar2+"ay")
+          //   console.log(result3);
+          // }
+          // else {
+          if (vowels.indexOf(stringChar1) === -1 && vowels.indexOf(stringChar2) === -1 ) {
+              result3 = (eachword[j].slice(2)).concat(stringChar1+stringChar2+"ay")
+              console.log(result3);
+              }
+          else if ( vowels.indexOf(stringChar1) === -1 )
+          { result2 = (eachword[j].replace(stringChar1,"")).concat(stringChar1+"ay");
+          console.log(result2); }
+
 
 }
-    // for (var i = 0; i < vowels.length; i++) {
-    //       // if (stringChar === vowels[i]) {
-    //         console.log(stringChar);
-            // console.log(vowels[i]);
-    //         console.log("vowel");
-    //         alert("vowels");
-    //       } else {
-    //         return false;
-    // //           if ((letter[j][j] === "q") && (letter[j][j+1] === vowels[4])) {
-    // //             console.log(" q u");
-    // //             alert("vowels");
-    // //           } else if (letter[j][1] !== vowels[index]) {
-    // //             console.log("hooray");
-    // //             alert("vowels");
-    //           }
-            // }
-
-    // }
-
+}
+}
 
 
 //     outputString=stringChar.join("");
