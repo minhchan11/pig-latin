@@ -1,38 +1,39 @@
 //BUSINESS LOGIC:
+//Define strings and arrays to be used
 var stringChar1 = 0;
 var stringChar2 = 0;
 var stringChar3 = 0;
 var vowels = ["a","e","i","o","u","A","I","E","O","U"];
 var sentence = 0;
 var eachword = 0;
+var result1 = 0;
+var result2 = 0;
+var output = [];
+var Output = [];
 
 function verify() {
-    eachword= sentence.split(" ");
-    for (var j = 0; j < eachword.length; j++) {
-    stringChar1 = eachword[j].charAt(0);
+  eachword= sentence.split(" ");
+  for (var j = 0; j < eachword.length; j++) {
+    stringChar1 = eachword[j].charAt(0); // define variable for comparison
     stringChar2 = eachword[j].charAt(1);
     stringChar3 = eachword[j].charAt(2);
-        if (vowels.indexOf(stringChar1) >-1 ) {
-          result = eachword[j].concat("ay");
-        } else {
-          if (vowels.indexOf(stringChar1) === -1 && (stringChar2 === "q"||stringChar2 === "u")) {
-            result = (eachword[j].slice(3)).concat(stringChar1+"quay")
-          } else if (stringChar1 === "q" && stringChar2 === "u") {
-            result = (eachword[j].slice(2)).concat("quay")
-          } else if (vowels.indexOf(stringChar1) === -1 && vowels.indexOf(stringChar2) === -1 ) {
-              result = (eachword[j].slice(2)).concat(stringChar1+stringChar2+"ay")
-          } else { result = (eachword[j].replace(stringChar1,"")).concat(stringChar1+"ay");
-          }
-
-
+    if (vowels.indexOf(stringChar1) >-1 ) {
+      result1 = eachword[j].concat("ay");
+      output.push(result1);
+    } else {
+      if (vowels.indexOf(stringChar1) === -1 && (stringChar2 === "q"||stringChar2 === "u")) { //for "qu" at the beginning
+      result2 = (eachword[j].slice(3)).concat(stringChar1+"quay")
+    } else if (stringChar1 === "q" && stringChar2 === "u") {
+      result2 = (eachword[j].slice(2)).concat("quay")
+    } else if (vowels.indexOf(stringChar1) === -1 && vowels.indexOf(stringChar2) === -1 ) { //double consonants
+      result2 = (eachword[j].slice(2)).concat(stringChar1+stringChar2+"ay")
+    } else { result2 = (eachword[j].replace(stringChar1,"")).concat(stringChar1+"ay"); //single consonants
+  }
+  output.push(result2);
+  Output = output.join(" ");
 }
 }
 }
-
-
-//     outputString=stringChar.join("");
-// };
-// };
 
 //USER INTERFACE:
 $(document).ready(function() {
