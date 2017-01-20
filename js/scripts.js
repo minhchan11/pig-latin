@@ -14,7 +14,7 @@ function verify() {
     stringChar1 = eachword[j].charAt(0);
     stringChar2 = eachword[j].charAt(1);
       for (var i = 0; i < vowels.length; i++) {
-        if (stringChar1 === vowels[i] || (stringChar1 === vowels[i]) && (stringChar1 === vowels[i]) ) {
+        if (stringChar1 === vowels[i] || (stringChar1 === vowels[i]) && (stringChar2 === vowels[i]) ) {
           result1 = eachword[j].concat("ay");
           console.log(result1);
         } else if (stringChar1 != vowels[i] ) {
@@ -24,7 +24,7 @@ function verify() {
           result3 = (eachword[j].slice(0,2)).concat(stringChar1+stringChar2+"ay")
           console.log(result);
         }
-
+        { break;}
   }
 }
 
