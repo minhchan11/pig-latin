@@ -8,10 +8,11 @@ var sentence = 0;
 var eachword = 0;
 var result1 = 0;
 var result2 = 0;
+var output = [];
 var Output = [];
 
 function verify() {
-  var output = [];
+  output = [];
   eachword= sentence.split(" ");
   for (var j = 0; j < eachword.length; j++) {
     stringChar1 = eachword[j].charAt(0); // define variable for comparison
